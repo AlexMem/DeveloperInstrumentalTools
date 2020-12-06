@@ -52,6 +52,12 @@ namespace WebApplication.EFCore
             //app.UseAuthorization();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+            
+            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            {
+                var context = serviceScope.ServiceProvider.GetRequiredService<ExampleContext>();
+                context.Database.Migrate();
+            }
         }
     }
 }
