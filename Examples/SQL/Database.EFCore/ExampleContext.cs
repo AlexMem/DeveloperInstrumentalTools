@@ -60,7 +60,7 @@ namespace Database.EFCore
             modelBuilder.Entity<WeatherEntity>().HasData(new
             {
                 Id = 1, 
-                Date = new DateTime(2020, 1, 1),
+                TimeStamp = new DateTime(2020, 1, 1),
                 Temperature = -1.3m,
                 SummaryId = 3
             });
@@ -68,7 +68,7 @@ namespace Database.EFCore
             modelBuilder.Entity<WeatherEntity>().HasData(new
             {
                 Id = 2, 
-                Date = new DateTime(2020, 1, 2),
+                TimeStamp = new DateTime(2020, 1, 2),
                 Temperature = 5.1m,
                 SummaryId = 5
             });
@@ -76,7 +76,7 @@ namespace Database.EFCore
             modelBuilder.Entity<WeatherEntity>().HasData(new
             {
                 Id = 3, 
-                Date = new DateTime(2020, 1, 3),
+                TimeStamp = new DateTime(2020, 1, 3),
                 Temperature = -10m,
                 SummaryId = 1
             });
