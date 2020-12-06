@@ -93,14 +93,14 @@ namespace Database.EFCore.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("timestamp without time zone");
-
                     b.Property<int?>("SummaryId")
                         .HasColumnType("integer");
 
                     b.Property<decimal>("Temperature")
                         .HasColumnType("numeric");
+
+                    b.Property<DateTime>("TimeStamp")
+                        .HasColumnType("timestamp without time zone");
 
                     b.HasKey("Id");
 
@@ -112,23 +112,23 @@ namespace Database.EFCore.Migrations
                         new
                         {
                             Id = 1,
-                            Date = new DateTime(2020, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             SummaryId = 3,
-                            Temperature = -1.3m
+                            Temperature = -1.3m,
+                            TimeStamp = new DateTime(2020, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 2,
-                            Date = new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             SummaryId = 5,
-                            Temperature = 5.1m
+                            Temperature = 5.1m,
+                            TimeStamp = new DateTime(2020, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             Id = 3,
-                            Date = new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             SummaryId = 1,
-                            Temperature = -10m
+                            Temperature = -10m,
+                            TimeStamp = new DateTime(2020, 1, 3, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 

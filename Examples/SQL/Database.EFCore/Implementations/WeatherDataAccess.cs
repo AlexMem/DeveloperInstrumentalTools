@@ -21,7 +21,7 @@ namespace Database.EFCore.Implementations
         {
             return await this.ExampleContext.Weathers
                 .Include(x => x.Summary)
-                .OrderBy(x => x.Date)
+                .OrderBy(x => x.TimeStamp)
                 .ToListAsync(ct);
         }
     }
