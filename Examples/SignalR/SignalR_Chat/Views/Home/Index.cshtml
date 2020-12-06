@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Chat</h1>
+    <div class="input-row">
+        <div class="row">
+            <div class="col-sm-10">
+                @Html.TextArea("input", string.Empty, new {@class = "form-control"})
+            </div>
+            <div class="col-sm-2">
+                <a href="#" onclick="" id="btnSend">Send</a>
+            </div>
+        </div>
+    </div>
+    <div class="log">
+    </div>
+</div>

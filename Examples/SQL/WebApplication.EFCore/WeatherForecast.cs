@@ -4,7 +4,7 @@ namespace WebApplication.EFCore
 {
     public class WeatherForecast
     {
-        public DateTime Date { get; set; }
+        public DateTime TimeStamp { get; set; }
 
         public decimal TemperatureC { get; set; }
 

@@ -10,7 +10,7 @@ namespace Database.EFCore.Entities
         
         public SummaryEntity Summary { get; set; }
         
-        public DateTime Date { get; set; }
+        public DateTime TimeStamp { get; set; }
         
         public decimal Temperature { get; set; }
     }

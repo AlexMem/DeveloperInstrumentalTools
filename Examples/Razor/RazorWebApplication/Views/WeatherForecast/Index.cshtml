@@ -1,0 +1,30 @@
+@model IEnumerable<WeatherForecast>
+
+@{
+    ViewBag.Title = "Weather forecast";
+    Layout = "_Layout";
+}
+
+<h2>Weather forecast</h2>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      Timestamp
+    </div>
+    <div class="col">
+      Temperature
+    </div>
+  </div>
+  @foreach (var forecast in this.Model)
+  {
+    <div class="row">
+      <div class="col">
+        @Html.ActionLink(forecast.TimeStamp.ToString(), "Details", forecast)
+      </div>
+      <div class="col">
+        @forecast.TemperatureCText
+      </div>
+    </div>
+  }
+</div>
