@@ -7,7 +7,7 @@ services:
     restart: always
     image: postgres
     build:
-      context: ./
+      context: ./SQL
       dockerfile: postgres.dockerfile
     ports:
       - "5432:5432"
@@ -16,6 +16,18 @@ services:
     environment:
       - POSTGRES_PASSWORD=root
       - POSTGRES_MULTIPLE_DATABASES=exampledb
+    networks:
+      - internal
+
+  webapp:
+    container_name: 'examples.webapp'
+    restart: always
+    image: app
+    build:
+      context: ./
+      dockerfile: app.dockerfile
+    ports:
+      - "8080:80"
     networks:
       - internal
 
