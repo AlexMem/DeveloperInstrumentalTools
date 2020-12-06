@@ -27,7 +27,10 @@ namespace RazorWebApplication
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddHttpClient<IWeatherForecastService, WeatherForecastService>(client => client.BaseAddress = new Uri(this.Configuration.GetSection("ApiOptions")["Url"]));
+            // services.AddHttpClient<IWeatherForecastService, WeatherForecastService>(client => client.BaseAddress = new Uri(this.Configuration.GetSection("ApiOptions")["Url"]));
+            var apiUrl = Environment.GetEnvironmentVariable("API_URL");
+            Console.WriteLine(apiUrl);
+            services.AddHttpClient<IWeatherForecastService, WeatherForecastService>(client => client.BaseAddress = new Uri(apiUrl));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
