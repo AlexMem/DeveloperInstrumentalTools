@@ -1,7 +1,6 @@
 version: '3.7'
 
 services:
-
   postgres:
     container_name: 'examples.postgres'
     restart: always
@@ -30,6 +29,22 @@ services:
       - "5000:80"
     links:
       - "postgres"
+    networks:
+      - internal
+
+  webui:
+    container_name: 'examples.webui'
+    restart: always
+    image: webui
+    build:
+      context: ./
+      dockerfile: webui.dockerfile
+    environment:
+      - API_URL=http://webapp
+    ports:
+      - "5050:80"
+    links:
+      - "webapp"
     networks:
       - internal
 
