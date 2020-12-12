@@ -24,5 +24,10 @@ namespace RazorWebApplication.Controllers
         {
             return this.View(model);
         }
+
+        public async Task<IActionResult> Statistics()
+        {
+            return this.View(await this.WeatherForecastService.GetWeatherForecastStatistics());
+        }
     }
 }
